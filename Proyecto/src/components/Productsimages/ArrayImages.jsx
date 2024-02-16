@@ -19,7 +19,7 @@ const ImagesArray = [
         title: 'Lavadero',
         category: 'Muebles',
         price: 175,
-        images: {lavaderoImg}
+        images: [lavaderoImg]
         
     },
    {
