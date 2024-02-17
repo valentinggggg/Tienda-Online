@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom';
 import { IoMdHome } from "react-icons/io";
 import { FaBagShopping } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
+import { FaShoppingCart } from "react-icons/fa";
 
 import tiendaLogo from "../Images/tiendalogo.png"
 
@@ -18,7 +19,8 @@ function NavBar() {
             <div className='Home-Products flex flex-col justify-center mt-44'>
                 <div className='mb-10'><Link title='Inicio' to='/'> <IoMdHome className='text-[#edece8] text-6xl font-bold' title='Home'/> </Link> </div> 
                 <div className='mb-10'> <Link title='Productos' to='/productos'> <FaBagShopping className='text-[#edece8] text-6xl font-bold'/> </Link> </div>
-                <div> <Link title='Contacto' to=''> <IoIosMail className='text-[#edece8] text-6xl font-bold ' /> </Link> </div>
+                <div> <Link title='Contacto' to='/contacto'> <IoIosMail className='text-[#edece8] text-6xl font-bold ' /> </Link> </div>
+                <div className='mt-80'> <Link title='Carrito' to='/cart'> <FaShoppingCart className='text-[#edece8] text-5xl font-bold ' /> </Link> </div>
             </div>
         </nav>
 
