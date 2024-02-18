@@ -6,11 +6,11 @@ function Productos() {
         <main className='w-screen min-h-screen lg:ml-32 md:mt-24 lg:mt-0 mt-24'>
             <div className='flex justify-between pl-7 pr-7 pt-7'>
                 <div className='flex'>
-                    <div className='mr-10'>
-                        <input type="range" id="Price" name="Price" min="0" max="500" className='w-full h-5 bg-gray-300 rounded-md outline-none opacity-70 hover:opacity-100 transition-opacity duration-200' />
-                        <label htmlFor="Price" className="text-sm text-gray-700"> $ Price </label>
+                    <div className='mr-14 flex'>
+                        <div className='w-[240px] h-[30px] bg-white flex items-center justify-center border-solid border-2 border-black rounded-xl mr-2'><input type="range" id="Price" name="Price" min="0" max="500" className='w-[220px] h-5 bg-gray-300 rounded-md outline-none opacity-70 hover:opacity-100 transition-opacity duration-200' /> </div>
+                        <label htmlFor="Price" className=" text-gray-700 flex justify-center items-center text-lg font-bold"> $Price </label>
                     </div>
-                    <select name='Productos'>
+                    <select name='Productos' className='w-32 h-8 font-bold rounded-lg border-black border-2 border-solid'>
                         <option>Todos</option>
                         <option>Ropa</option>
                         <option>Muebles</option>

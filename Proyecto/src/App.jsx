@@ -4,6 +4,7 @@ import Productos from './components/Products';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import NavBarsm from './components/NavBarsm';
+import Contact from './components/Contact';
 
 function App() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/productos" element={<Productos />} />
         <Route path="/" element={<Home />} />
+        <Route path="/contacto" element={<Contact />} /> 
       </Routes>
     </main>
   );
