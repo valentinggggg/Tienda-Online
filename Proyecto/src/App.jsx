@@ -11,13 +11,13 @@ function App() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 1068); // Definimos 768 como el ancho de pantalla para sm, puedes ajustar este valor según tus necesidades.
+      setIsSmallScreen(window.innerWidth < 1020); 
     };
 
-    // Agregar el event listener para el cambio de tamaño de pantalla
+ 
     window.addEventListener('resize', handleResize);
 
-    // Limpia el event listener cuando el componente se desmonta
+    
     return () => {
       window.removeEventListener('resize', handleResize);
     };

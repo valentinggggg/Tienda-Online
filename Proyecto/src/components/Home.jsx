@@ -12,7 +12,7 @@ function Home(){
                         <Carrousell />
                     </div>
                 </article>
-                <article className="ProductosTendencia flex justify-center items-center">
+                <article className="ProductosTendencia flex flex-col justify-center items-center">
                     <h1 className="custom-h1 text-4xl text-white  font-bold mt-9 underline decoration-slate-50 decoration-2 underline-offset-4">Productos en Tendencia</h1>
                     <TrendProducts />
                 </article>

@@ -1,6 +1,10 @@
+import TrendRopaSection from "./Productsimages/TrendRopa"
+
 function TrendProducts(){
     return(
-        <div></div>
+        <div className="flex">
+            <TrendRopaSection />
+        </div>
     )
 }
 
