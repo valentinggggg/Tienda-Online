@@ -22,7 +22,7 @@ function NavBar() {
             <div className='lg:mb-10 sm:ml-2'><Link title='Inicio' to='/' className='flex flex-col justify-center items-center'> <IoMdHome className='text-[#edece8] lg:text-6xl sm:text-3xl font-bold' title='Home'/> <h3 className='text-[#edece8] text-center underline font-bold p-1'> Inicio </h3> </Link> </div> 
             <div className='lg:mb-10 sm:ml-2'> <Link title='Productos' to='/productos' className='flex flex-col justify-center items-center'> <FaBagShopping className='text-[#edece8] lg:text-6xl sm:text-3xl font-bold'/> <h3 className='text-[#edece8] text-center underline font-bold p-1'> Productos </h3> </Link> </div>
             <div className='lg:mb-10 sm:ml-2'> <Link title='Contacto' to='/contacto' className='flex flex-col justify-center items-center'> <IoIosMail className='text-[#edece8] lg:text-6xl sm:text-3xl font-bold ' /> <h3 className='text-[#edece8] text-center underline font-bold p-1'> Contacto </h3></Link> </div>
-            <div className='lg:mt-72 sm:mr-4'> <Link title='Carrito' to='/cart'> <FaShoppingCart className='text-[#edece8] lg:text-5xl sm:text-3xl font-bold ' /></Link> </div>
+            <div className='lg:mt-48 sm:mr-4'> <Link title='Carrito' to='/cart' className='flex flex-col justify-center items-center'> <FaShoppingCart className='text-[#edece8] lg:text-5xl sm:text-3xl font-bold ' /></Link> </div>
         </div>
     </nav>
     )

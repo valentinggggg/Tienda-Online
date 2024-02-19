@@ -1,5 +1,6 @@
 
 import ImagesArray from './Productsimages/ArrayImages';
+import { Link } from 'react-router-dom';
 
 function Productos() {
     return (
@@ -21,7 +22,8 @@ function Productos() {
             </div>
             <ul className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 lg:gap-4 md:gap-2 md:mt-4 '>
                 {ImagesArray.map((item) => (
-                    <li key={item.id} className='flex justify-center items-center'>
+                <Link key={item.id}>
+                    <li key={item.id} className='flex justify-center items-center hover:brightness-75 hover:cursor-pointer'>
                         <div className='lg:w-[360px] lg:h-[440px] md:w-[300px] md:h-[380px]  shadow-inner border-solid border-2 border-black bg-[#f2f0f0] lg:mt-4 md:flex flex-col md:justify-center md:items-center w-[300px] h-[350px] mt-9 rounded-lg'>
                             <div className="lg:w-full lg:h-full md:w-full md:h-full w-full h-[290px] flex justify-center items-center overflow-hidden p-2">
                                 <img src={item.images} alt={item.title} className='object-cover w-full h-full rounded-lg' />
@@ -32,6 +34,7 @@ function Productos() {
                             </div>
                         </div>
                     </li>
+                </Link>
                 ))}
             </ul>
         </main>

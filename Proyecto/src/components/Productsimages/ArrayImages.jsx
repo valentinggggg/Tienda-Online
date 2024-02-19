@@ -290,6 +290,6 @@ const ImagesArray = [
     },
 ];
 
-export { ImagesArray };
+export default ImagesArray;
 
 
