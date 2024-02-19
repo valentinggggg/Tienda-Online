@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes, FaShoppingBag } from 'react-icons/fa';
+import { FaBars, FaTimes, FaShoppingBag, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { IoMdHome } from "react-icons/io";
 import { IoIosMail } from "react-icons/io";
 import tiendaLogo from "../Images/tiendalogo.png";
+
 
 function NavBarsm() {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,8 +28,15 @@ function NavBarsm() {
                         style={{ maxWidth: '100px', maxHeight: '200px' }}
                     />
                 </div>
-                <div className='text-white cursor-pointer' onClick={toggleMenu}>
-                    {isOpen ? <FaTimes className='text-2xl' /> : <FaBars className='text-2xl' />}
+                <div className='flex mr-4'>
+                    <div className='text-white cursor-pointer p-2' onClick={toggleMenu}>
+                        {isOpen ? <FaTimes className='text-2xl' /> : <FaBars className='text-2xl' />}
+                    </div>
+                    <div className='p-2'>
+                    <Link title='Carrito' to='/cart' className='text-2xl'> 
+                        <FaShoppingCart className='text-[#edece8] lg:text-5xl sm:text-3xl font-bold ' />
+                    </Link> 
+                    </div>
                 </div>
             </div>
             {isOpen && (

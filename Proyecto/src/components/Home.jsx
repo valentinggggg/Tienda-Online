@@ -13,8 +13,7 @@ function Home(){
                         <Carrousell />
                     </div>
                 </article>
-                <article className="ProductosTendencia flex flex-col justify-center items-center">
-                    <h1 className="custom-h1 text-4xl text-white  font-bold mt-9 underline decoration-slate-50 decoration-2 underline-offset-4 flex">Productos en Tendencia<FaStar className='ml-2 text-yellow-400 mt-1'/></h1>
+                <article className="ProductosTendencia sm:flex sm:flex-col sm:justify-center sm:items-center">
                     <TrendProducts />
                 </article>
                 <article className="Servicios/Ubicacion">
