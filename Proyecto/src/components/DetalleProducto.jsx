@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react"; // Agrega import React y useEffect
 import { useParams } from 'react-router-dom';
 import ImagesArray from './Productsimages/ArrayImages'; 
 
