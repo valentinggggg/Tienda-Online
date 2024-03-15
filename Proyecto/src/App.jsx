@@ -25,14 +25,23 @@ function App() {
     };
   }, []);
 
+  const [carrito, setCarrito] = useState([]);
+
+  const addToCart = (producto) => {
+    const existente = carrito.find(item => item.id === producto.id);
+    if (!existente) {
+      setCarrito([...carrito, producto]);
+    }
+  };
+
   return (
     <main className='w-full min-h-screen bg-[#CCCCCC] flex'>
       {isSmallScreen ? <NavBarsm /> : <NavBar />}
       <Routes>
         <Route path="/productos" element={<Productos />} />
-        <Route path="/productos/:id" element={<DetalleProducto />} />
+        <Route path="/productos/:id" element={<DetalleProducto onAddToCart={addToCart} />} />
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Carrito />} />
+        <Route path="/cart" element={<Carrito carrito={carrito} />}/>
         <Route path="/contacto" element={<Contact />} /> 
       </Routes>
     </main>

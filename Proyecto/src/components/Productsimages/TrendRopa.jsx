@@ -42,7 +42,7 @@ function TrendRopaSection(){
         <div className='w-[390px] sm:w-[1200px] flex justify-center'>
           <ul className='grid grid-cols-2 gap-1 w-[380px] pt-2 pb-2 sm:w-[1050px] justify-center items-center place-items-center sm:flex bg-[#ebebeb] sm:pl-4 sm:pr-4 sm:pt-2 sm:pb-2 mt-3 border border-solid border-black rounded-md'>
             {TPRarray.map((ropa) =>
-              <Link key={ropa.id}>
+              <Link key={ropa.id} to={`/productos/${ropa.id}`}>
                 <li key={ropa.id} className='sm:flex hover:brightness-75 hover:cursor-pointer'>
                   <div className='lg:w-[250px] lg:h-[300px] md:w-[180px] md:h-[280px] shadow-inner border-solid border-2 border-black bg-[#f2f0f0] lg:mt-4 md:flex flex-col md:justify-center md:items-center w-[160px] h-[290px] sm:mt-9 rounded-lg '>
     
