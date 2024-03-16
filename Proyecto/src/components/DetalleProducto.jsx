@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; // Agrega import React y useEffect
+import React, { useState, useEffect } from "react"; 
 import { useParams } from 'react-router-dom';
 import ImagesArray from './Productsimages/ArrayImages'; 
 
@@ -15,18 +15,20 @@ function DetalleProducto({ onAddToCart }) {
     const addToCart = () => {
         if (onAddToCart) {
             onAddToCart(producto);
+            alert("Producto agregado al carrito")
         }
     };
 
     return (
         <main className='w-full h-full justify-center items-center flex'>
-            <div className='mt-32 flex sm:w-[900px] sm:h-[650px] bg-[#e5e3e3] p-4 justify-center items-center rounded-xl border-solid border-2 border-black'>
-                <div className='sm:w-[500px] sm:h-full mr-5'>
+            <div className='mt-32 flex flex-col sm:flex-row h-[540px] w-[380px] sm:w-[900px] bg-[#e5e3e3] sm:p-4 p-5 justify-center items-center rounded-xl border-solid border-2 border-black'>
+                <div className='w-full sm:w-[500px] h-[300px] sm:h-full sm:mr-5 mr-0 mb-5 sm:mb-0'>
                     <img src={producto.images} alt={producto.title} className='object-cover w-full h-full brightness-25' />
                 </div>
-                <div className='sm:w-[300px] sm:h-[500px] flex justify-center items-center flex-col'>
+                <div className='w-full sm:w-[300px] flex justify-center items-center flex-col'>
                     <h1 className='font-bold text-2xl'>{producto.title}</h1>
-                    <p className='text-justify text-sm mt-2'>{producto.description}</p>
+                    <p className='text-center text-sm mt-2 sm:hidden'>{producto.descriptionCart}</p>
+                    <p className='text-justify text-sm mt-2 hidden sm:block'>{producto.description}</p>
                     <div className='flex justify-center items-center mt-8 gap-4'>
                         <h3 className='font-bold text-xl'>${producto.price}</h3>
                         <button onClick={addToCart} className='bg-green-200 p-3 font-bold border-solid border-2 border-black rounded-lg'>Agregar al Carrito</button>
@@ -38,6 +40,7 @@ function DetalleProducto({ onAddToCart }) {
 }
 
 export default DetalleProducto;
+
 
 
 
