@@ -20,14 +20,14 @@ function Carrito({ carrito, setCarrito }) {
         }
     };
 
-    const eliminarProducto = (id) => {
+    const handleEliminarProducto = (id) => {
         const nuevoCarrito = carrito.filter(producto => producto.id !== id);
         setCarrito(nuevoCarrito);
     };
 
     return (
         <main className="flex flex-col justify-center items-center w-full h-full">
-            <div className=" mt-20">
+            <div className=" mt-32">
                 <div className="flex">
                     <h1 className="font-bold text-2xl underline">
                         Carrito
@@ -50,7 +50,7 @@ function Carrito({ carrito, setCarrito }) {
                             </div>
                             <div className="flex sm:flex-col justify-between items-end p-2">
                                 <div className="flex justify-end">
-                                <button onClick={() => eliminarProducto(producto.id)} className="font-bold text-2xl ml-6 hover:cursor-pointer hover:text-red-600"><FaTrashAlt /></button>
+                                <button onClick={() => handleEliminarProducto(producto.id)} className="font-bold text-2xl ml-6 hover:cursor-pointer hover:text-red-600"><FaTrashAlt /></button>
                             </div>
                             <div className="flex justify-end items-end">
                                 <button onClick={() => handleIncrement(producto.id)} className="font-bold text-3xl border-solid border-2 border-black w-10 rounded-xl mr-3 hover:cursor-pointer hover:bg-[#adadad]">+</button>
@@ -62,7 +62,31 @@ function Carrito({ carrito, setCarrito }) {
                     ))}
                 </div>
                 <div className="flex justify-center items-center">
-                    <button className="p-2 mt-2 font-bold w-32 border-solid border-2 border-black rounded-md bg-green-200 hover:bg-green-500">Comprar</button>
+                    <button className="btn btn-success mt-4 border-solid border-2 border-black" onClick={()=>document.getElementById('my_modal_5').showModal()}>Pagar Ahora!</button>
+                        <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                            <div className="modal-box">
+                                <h3 className="font-bold text-lg">Tus Productos:</h3>
+                                {carrito.map((productocart) => (
+                                    <div key={productocart.id} className="">
+                                        <div>
+                                            <h1>{productocart.title} x </h1>
+                                        </div> 
+                                    </div>
+                                ) )}
+                                <h1 className="border-t border-black pt-1">Total: </h1>
+                                <div>
+                                    <button className="w-40 bg-green-200 h-8 mt-4 border-2 border-black rounded-lg hover:bg-green-400">
+                                        Finalizar Compra
+                                    </button>
+                                </div>
+                            <div className="modal-action">
+                        <form method="dialog">
+                        {/* if there is a button in form, it will close the modal */}
+                        <button className="btn">Close</button>
+                        </form>
+    </div>
+  </div>
+</dialog>
                 </div>
             </div>
         </main>
@@ -70,6 +94,7 @@ function Carrito({ carrito, setCarrito }) {
 }
 
 export default Carrito;
+
 
 
 
