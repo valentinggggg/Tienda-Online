@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Carrito from './components/Carrito';
 import DetalleProducto from './components/DetalleProducto';
 import ImagesArray from './components/Productsimages/ArrayImages';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
   };
 
   return (
+    <>
     <main className='w-full min-h-screen bg-[#CCCCCC] flex'>
       {isSmallScreen ? <NavBarsm /> : <NavBar />}
       <Routes>
@@ -84,6 +86,8 @@ function App() {
         <Route path="/contacto" element={<Contact />} /> 
       </Routes>
     </main>
+    <Footer />
+    </>
   );
 }
 

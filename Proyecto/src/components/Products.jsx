@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Productos({ products, onCategoryChange, onPriceChange, priceValue }) {
   return (
-    <main className='w-screen min-h-screen lg:ml-32 md:mt-24 lg:mt-0 mt-24'>
+    <main className='w-screen min-h-screen lg:ml-32 md:mt-24 lg:mt-0 mt-24 mb-8'>
       <div className='flex justify-between pl-7 pr-7 pt-7'>
         <div className='flex '>
           <div className='mr-14 flex'>
