@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"; 
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ImagesArray from './Productsimages/ArrayImages'; 
 
 function DetalleProducto({ onAddToCart }) {
@@ -20,7 +20,7 @@ function DetalleProducto({ onAddToCart }) {
     };
 
     return (
-        <main className='w-full h-full justify-center items-center flex'>
+        <main className='w-full h-full justify-center items-center flex flex-col'>
             <div className='mt-32 flex flex-col sm:flex-row h-[540px] w-[380px] sm:w-[900px] bg-[#e5e3e3] sm:p-4 p-5 justify-center items-center rounded-xl border-solid border-2 border-black'>
                 <div className='w-full sm:w-[500px] h-[300px] sm:h-full sm:mr-5 mr-0 mb-5 sm:mb-0'>
                     <img src={producto.images} alt={producto.title} className='object-cover w-full h-full brightness-25' />
@@ -35,6 +35,11 @@ function DetalleProducto({ onAddToCart }) {
                     </div>
                 </div>
             </div>
+            <Link to={'/productos'}>
+            <button className="btn bg-grey-500 rounded-md mt-3 border-b-2 border-b-black border-l-2 border-l-black border-r-gray-600 border-t-gray-600">
+                ⭠ Volver a los Productos
+            </button>
+            </Link>
         </main>
     );
 }

@@ -7,6 +7,8 @@ import NavBarsm from './components/NavBarsm';
 import Contact from './components/Contact';
 import Carrito from './components/Carrito';
 import DetalleProducto from './components/DetalleProducto';
+import ImagesArray from './components/Productsimages/ArrayImages';
+
 
 function App() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -22,6 +24,29 @@ function App() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const [filters, setFilters] = useState({
+    category: 'Todos',
+    minPrice: 0
+  });
+
+  const handleCategoryChange = (event) => {
+    setFilters({ ...filters, category: event.target.value });
+  };
+
+  const [priceValue, setPriceValue] = useState(0);
+
+  const handlePriceChange = (event) => {
+    setFilters({ ...filters, minPrice: parseInt(event.target.value) });
+    setPriceValue(parseInt(event.target.value));
+  };
+
+  const filteredProducts = ImagesArray.filter((product) => {
+    return (
+      (filters.category === 'Todos' || product.category === filters.category) &&
+      product.price >= filters.minPrice
+    );
+  });
 
   const [carrito, setCarrito] = useState(() => {
     const storedCarrito = localStorage.getItem('carrito');
@@ -52,7 +77,7 @@ function App() {
     <main className='w-full min-h-screen bg-[#CCCCCC] flex'>
       {isSmallScreen ? <NavBarsm /> : <NavBar />}
       <Routes>
-        <Route path="/productos" element={<Productos />} />
+        <Route path="/productos" element={<Productos products={filteredProducts} onCategoryChange={handleCategoryChange} onPriceChange={handlePriceChange} priceValue={priceValue}/>} />
         <Route path="/productos/:id" element={<DetalleProducto onAddToCart={addToCart} />} />
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Carrito carrito={carrito} eliminarProducto={eliminarProducto} setCarrito={setCarrito}/>}/>
