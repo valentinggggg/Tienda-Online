@@ -1,13 +1,13 @@
-import '../styles/Home.css'
+import React from 'react';
+import '../styles/Home.css';
 import TrendProducts from './TrendProducts';
 import Carrousell from './Carrousel';
 import Service from './Service';
-import { FaStar } from "react-icons/fa";
 
 function Home(){
     return(
         <main>
-           <section className="Inicio w-screen min-h-screen">
+            <section className="Inicio w-screen min-h-screen">
                 <article className="Ofertas/Carrousell flex justify-center items-center">
                     <div className="Carrousell lg:w-full lg:ml-28 lg:h-[700px] lg:mt-0 mt-28 w-screen h-80">
                         <Carrousell />
@@ -19,11 +19,9 @@ function Home(){
                 <article className="Servicios/Ubicacion sm:ml-32 bg-[#e2e2e2] w-full h-[800px] mt-8">
                     <Service /> 
                 </article>
-           </section>
+            </section>
         </main>
     )
 }
-
-
 
 export default Home;

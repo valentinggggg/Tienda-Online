@@ -1,12 +1,11 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import EscritorioParaPcImg from './Images/Muebles/EscritorioParaPc.jpg';
-import MesaEscandinavaImg from './Images/Muebles/MesaEscandinava.jpg';
 import sillon1plazaImg from './Images/Muebles/sillon1plaza.jpg';
 import sillamaderaImg from './Images/Muebles/sillamadera.jpg';
-import { Link } from 'react-router-dom';
-
+import ShowM from './Images/Muebles/ShowMuebles.jpg'
 
 function TrendMueblesSection(){
-
     const TPMarray = [
         {
             id: 6,
@@ -32,28 +31,27 @@ function TrendMueblesSection(){
     ];
 
     return (
-      <div className='w-[390px] sm:w-full flex justify-center'>
-      <ul className='grid grid-cols-2 gap-1 w-[380px] pt-2 pb-2 sm:w-full justify-center items-center place-items-center sm:flex mt-3'>
-        {TPMarray.map((ropa) =>
-          <Link key={ropa.id} to={`/productos/${ropa.id}`}>
-            <li key={ropa.id} className='sm:flex hover:brightness-75 hover:cursor-pointer'>
-              <div className='lg:w-full lg:h-[500px] md:w-[180px] md:h-[280px] shadow-inner bg-[#f2f0f0] lg:mt-4 md:flex flex-col md:justify-center md:items-center w-[160px] h-[290px] sm:mt-9 rounded-lg'>
-
-                <div className="lg:w-full lg:h-full md:w-full md:h-full w-full h-[240px] flex justify-center items-center overflow-hidden p-2">
-                  <img src={ropa.images} alt={ropa.title} className='object-cover w-full h-full rounded-lg' />
-                </div>
-                <div className='text-center pb-2 hover:bg-black hover:text-white w-full'>
-                  <p className="text-lg font-bold">{ropa.title}</p>
-                  <p className="text-sm">Precio: ${ropa.price}</p>
-                </div>
-              </div>
-            </li>
-          </Link>
-        )}
-      </ul>
-    </div>
-      )
-
+        <div className='w-full flex justify-center'>
+            <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1 mt-3 ml-1'>
+              <li>
+              <Link to={'./productos'}><img src={ShowM} className='rounded-md brightness-75 hover:cursor-pointer'/></Link>
+              </li>
+                {TPMarray.map((mueble) => (
+                    <Link key={mueble.id} to={`/productos/${mueble.id}`}>
+                        <li className='hover:brightness-75 hover:cursor-pointer'>
+                            <div className='bg-gray-200 p-4 rounded-lg'>
+                                <img src={mueble.images[0]} alt={mueble.title} className='object-cover w-full h-48 sm:h-64 md:h-[390px]' />
+                                <div className='text-center mt-2'>
+                                    <p className="text-lg font-bold">{mueble.title}</p>
+                                    <p className="text-sm">Precio: ${mueble.price}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </Link>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
 export default TrendMueblesSection;
